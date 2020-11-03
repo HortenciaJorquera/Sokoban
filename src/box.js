@@ -3,6 +3,7 @@ class Box {
     constructor(row,col){
         this.row=row;
         this.col=col;
+        this.inStorageLocation=false;
         this.image=loadImage('/assets/images/box.png');
     }
 
@@ -13,42 +14,47 @@ class Box {
     moveBoxUp(isEmpty){
         if(isEmpty) {
             this.row--;
-            this.isInStorageLocation(game.storeLocations)
+            this.reviewLocation()
         }
     }
 
     moveBoxDown(isEmpty){
         if(isEmpty) {
             this.row++;
-            this.isInStorageLocation(game.storeLocations)
+            this.reviewLocation()
         }
     }
 
     moveBoxRight(isEmpty){
         if(isEmpty) {
             this.col++;
-            this.isInStorageLocation(game.storeLocations)
+            this.reviewLocation()
         }
     }
 
     moveBoxLeft(isEmpty){
         if(isEmpty) {
             this.col--;
-            this.isInStorageLocation()
+            this.reviewLocation()
         }
     }
 
-    isInStorageLocation(){
-        for (let location of game.storeLocations)
+    reviewLocation(){
+        
+        for (let location of game.storageLocations)
             if(this.row===location[0] && this.col===location[1]){
                 //console.log('the box in '+ location+ ' should turn blue')
                 this.image=loadImage('/assets/images/box-on-storage-location.png')
+                this.inStorageLocation=true;
+                console.log(this.inStorageLocation)
                 }
             else{
                 this.image=loadImage('/assets/images/box.png');
+                this.inStorageLocation=false;
+                console.log(this.inStorageLocation)
 
             }
-
+        
     }
 
 }

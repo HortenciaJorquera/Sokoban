@@ -19,7 +19,7 @@ class Game {
 
     preload(){
         this.wallImg=loadImage('/assets/images/wall.png');
-        this.storeLocationImg=loadImage('/assets/images/store-location.png');
+        this.storageLocationImg=loadImage('/assets/images/storage-location.png');
         this.grassImg=loadImage('/assets/images/grass.png');
         this.floorImg=loadImage('/assets/images/floor.png');
     }
@@ -32,7 +32,7 @@ class Game {
                 this.HEIGHT=HEIGHT1;
                 this.WIDTH=WIDTH1;
                 this.walls=walls1;
-                this.storeLocations=storeLocations1;
+                this.storageLocations=storageLocations1;
                 this.boxesLocation=boxesLocations1;
                 this.grass=grass1;
                 this.floor=floor1;
@@ -42,7 +42,7 @@ class Game {
                 this.HEIGHT=HEIGHT2;
                 this.WIDTH=WIDTH2;
                 this.walls=walls2;
-                this.storeLocations=storeLocations2;
+                this.storageLocations=storageLocations2;
                 this.boxesLocation=boxesLocations2;
                 this.grass=grass2;
                 this.floor=floor2;
@@ -52,7 +52,7 @@ class Game {
                 this.HEIGHT=HEIGHT3;
                 this.WIDTH=WIDTH3;
                 this.walls=walls3;
-                this.storeLocations=storeLocations3;
+                this.storageLocations=storageLocations3;
                 this.boxesLocation=boxesLocations3;
                 this.grass=grass3;
                 this.floor=floor3;
@@ -76,7 +76,7 @@ class Game {
         //draw grid
         for (let x = 0; x <= this.WIDTH; x += SQUARE_SIDE) {
             for (let y = 0; y <= this.HEIGHT; y += SQUARE_SIDE) {
-              stroke(0);
+              stroke(200);
               strokeWeight(2);
               line(x, 0, x, this.HEIGHT);
               line(0, y, this.WIDTH, y);
@@ -89,8 +89,8 @@ class Game {
         }
 
         //draw storeLocations
-        for(let storeLocation of this.storeLocations){
-            image(this.storeLocationImg,storeLocation[1]*SQUARE_SIDE,storeLocation[0]*SQUARE_SIDE,SQUARE_SIDE,SQUARE_SIDE);
+        for(let storageLocation of this.storageLocations){
+            image(this.storageLocationImg,storageLocation[1]*SQUARE_SIDE,storageLocation[0]*SQUARE_SIDE,SQUARE_SIDE,SQUARE_SIDE);
         }
 
         //draw walls
@@ -139,8 +139,18 @@ class Game {
         return false;
     }
 
-    isLevelFinished(){
+    undo(){
+        this.player.undo();
+        
+    }
 
+    isLevelFinished(){
+        
+        for(let box of this.boxes){
+            //console.log(box.inStorageLocation)
+            if (!box.inStorageLocation) return false
+        }
+        return true
     }
 
 }
