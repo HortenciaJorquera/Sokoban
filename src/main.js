@@ -1,4 +1,5 @@
 const game=new Game(1);
+console.log(game.WIDTH);
 
 function preload(){
     game.preload();
@@ -6,9 +7,9 @@ function preload(){
   
 
 function setup() {
-    let canvas = createCanvas(WIDTH, HEIGHT);
-    canvas.parent("canvas");
     game.setup();
+    let canvas = createCanvas(game.WIDTH, game.HEIGHT);
+    canvas.parent("canvas");
   }
 
 
