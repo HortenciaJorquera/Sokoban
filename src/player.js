@@ -13,11 +13,23 @@ class Player {
         image(this.image,this.col*SQUARE_SIDE,this.row*SQUARE_SIDE,SQUARE_SIDE,SQUARE_SIDE);
     }
 
-    moveUp(isEmpty){
-        if(isEmpty && this.row>0){
-            this.row--;
-        }
+    // moveUp(isEmpty){
+    //     if(isEmpty && this.row>0){
+    //         this.row--;
+    //     }
+    //     this.image=loadImage('/assets/images/boxman-up.png')
+    // }
+
+    moveUp(nextSquare,game){
+        if(nextSquare==='empty')this.row--
+        
         this.image=loadImage('/assets/images/boxman-up.png')
+
+        if(typeof nextSquare==='object' && game.nextSquare(nextSquare.row-1,nextSquare.col)!=='wall'){
+            this.row--;
+            nextSquare.moveUpBox(game.isEmpty(nextSquare.row-1,nextSquare.col))
+        }
+
     }
 
     moveDown(isEmpty){

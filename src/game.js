@@ -81,10 +81,30 @@ class Game {
     }
 
     isEmpty(row,col){
-        return game.searchForArray(this.walls,[row,col])===-1;
+        return this.searchForArray(this.walls,[row,col])===-1;
     }
 
-    updateBox(box,row,col){}
+    nextSquare(row,col){
+        if(this.searchForArray(this.walls,[row,col])===-1){
+            if(this.isABox(row,col)===false)
+                {   //console.log(this.isABox(row,col))
+                    return 'empty'}
+            return this.isABox(row,col)
+        }
+        return 'wall'
+
+    }
+
+    isABox(row,col){
+        for(let box of this.boxes){
+            //console.log(box)
+            if(box.row===row && box.col===col)  
+            return box;
+        }
+        return false;
+    }
+
+    //updateBox(box,row,col){}
 
     isLevelFinished(){}
 

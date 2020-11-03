@@ -7,10 +7,14 @@ class Box {
     }
 
     drawBox(){
-        image(this.image,this.row*SQUARE_SIDE,this.col*SQUARE_SIDE,SQUARE_SIDE,SQUARE_SIDE);
+        image(this.image,this.col*SQUARE_SIDE,this.row*SQUARE_SIDE,SQUARE_SIDE,SQUARE_SIDE);
 
     }
 
-    moveUpBox(){}
+    moveUpBox(isEmpty){
+        if(isEmpty){
+            this.row--;
+        }
+    }
 
 }
