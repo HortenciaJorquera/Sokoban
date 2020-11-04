@@ -5,6 +5,7 @@ class Box {
         this.col=col;
         this.inStorageLocation=false;
         this.image=loadImage('/assets/images/box.png');
+        this.old=[row,col,0];
     }
 
     drawBox(){
@@ -12,28 +13,38 @@ class Box {
     }
 
     moveBoxUp(isEmpty){
+        this.old[1]=this.col;
         if(isEmpty) {
+            this.old[0]=this.row;
             this.row--;
             this.reviewLocation()
         }
     }
 
     moveBoxDown(isEmpty){
+        this.old[1]=this.col;
         if(isEmpty) {
+            this.old[0]=this.row;
             this.row++;
             this.reviewLocation()
         }
     }
 
     moveBoxRight(isEmpty){
+        this.old[0]=this.row;
+
         if(isEmpty) {
+            this.old[1]=this.col;
             this.col++;
             this.reviewLocation()
         }
     }
 
     moveBoxLeft(isEmpty){
+        this.old[0]=this.row;
+
         if(isEmpty) {
+            this.old[1]=this.col;
             this.col--;
             this.reviewLocation()
         }
@@ -47,6 +58,12 @@ class Box {
             this.image=loadImage('/assets/images/box.png');
             this.inStorageLocation=false;
         }
+        
+    }
+
+    undo(){
+        this.row=this.old[0];
+        this.col=this.old[1];
         
     }
 

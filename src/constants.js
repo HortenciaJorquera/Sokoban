@@ -1,7 +1,12 @@
+//menu window constants
+const menuWidth=500;
+const menuHeight=300;
+
+//boarding game constants
 const finalLevel=3;
 const SQUARE_SIDE = 82;
 
-//Level 1:
+//Level 1 constants:
 const HEIGHT1 = SQUARE_SIDE*9;
 const WIDTH1 = SQUARE_SIDE*7;
 const walls1=[[0,0],[0,1],[0,2],[0,3],[0,4],[0,5],[0,6],
@@ -16,7 +21,7 @@ const floor1=[[1,4],[1,5],[2,4],[2,5],[3,1],[3,2],[3,4],[4,1],[4,2],[4,3],[4,4],
               [5,1],[5,2],[5,4],[6,2],[6,3],[6,4],[6,5],[7,3],[7,4],[7,5]];
 const player1=[6,2];
 
-//Level 2:
+//Level 2 constants:
 const HEIGHT2 = SQUARE_SIDE*9;
 const WIDTH2 = SQUARE_SIDE*8;
 const walls2=[[0,1],[0,2],[0,3],[0,4],[1,1],[1,4],[2,0],[2,1],[2,4],[3,0],[3,4],[3,5],[3,6],[3,7],
@@ -29,7 +34,7 @@ const floor2=[[1,2],[1,3],[2,2],[2,3],[3,1],[3,2],[4,1],[4,2],[4,5],[4,6],[5,4],
 const player2=[1,2];
 
 
-//Level 3:
+//Level 3 constants:
 const HEIGHT3 = SQUARE_SIDE*9;
 const WIDTH3 = SQUARE_SIDE*9;
 const walls3=[[0,1],[0,2],[0,3],[0,4],[0,5],[0,6],[0,7],[0,8],[1,0],[1,1],[1,8],

@@ -21,13 +21,17 @@ class Player {
         if(nextSquare==='empty'){
             this.old[0]=this.row;
             this.row--;
+            //nextSquare.old[2]=1;
+            stepsSound.play();
             return
         }
         if(typeof nextSquare==='object' && game.nextSquare(nextSquare.row-1,nextSquare.col)!=='wall' && typeof game.nextSquare(nextSquare.row-1,nextSquare.col)!=='object'){
             this.old[0]=this.row;
             this.row--;
             nextSquare.moveBoxUp(game.isEmpty(nextSquare.row-1,nextSquare.col));
+            //nextSquare.old[2]=1;
             this.image=loadImage('/assets/images/boxman-pushing-up.png');
+            pushSound.play();
             return
         }
     }
@@ -39,13 +43,17 @@ class Player {
         if(nextSquare==='empty'){
             this.old[1]=this.col;
             this.row++;
+            //nextSquare.old[2]=1;
+            stepsSound.play();
             return
         }
         if(typeof nextSquare==='object' && game.nextSquare(nextSquare.row+1,nextSquare.col)!=='wall'&& typeof game.nextSquare(nextSquare.row+1,nextSquare.col)!=='object'){
             this.old[0]=this.row;
             this.row++;
             nextSquare.moveBoxDown(game.isEmpty(nextSquare.row+1,nextSquare.col));
+            //nextSquare.old[2]=1;
             this.image=loadImage('/assets/images/boxman-pushing-down1.png');
+            pushSound.play();
             return
         }
     }
@@ -57,13 +65,17 @@ class Player {
         if(nextSquare==='empty'){
             this.old[1]=this.col;
             this.col++;
+            //nextSquare.old[2]=1;
+            stepsSound.play();
             return
         }
         if(typeof nextSquare==='object' && game.nextSquare(nextSquare.row,nextSquare.col+1)!=='wall'&& typeof game.nextSquare(nextSquare.row,nextSquare.col+1)!=='object'){
             this.old[1]=this.col;
             this.col++;
             nextSquare.moveBoxRight(game.isEmpty(nextSquare.row,nextSquare.col+1));
+            //nextSquare.old[2]=1;
             this.image=loadImage('/assets/images/boxman-pushing-right.png');
+            pushSound.play();
             return
         }
     }
@@ -75,13 +87,17 @@ class Player {
         if(nextSquare==='empty'){
             this.old[1]=this.col;
             this.col--;
+            //nextSquare.old[2]=1;
+            stepsSound.play();
             return
         }
         if(typeof nextSquare==='object' && game.nextSquare(nextSquare.row,nextSquare.col-1)!=='wall' && typeof game.nextSquare(nextSquare.row,nextSquare.col-1)!=='object'){
             this.old[1]=this.col;
             this.col--;
             nextSquare.moveBoxLeft(game.isEmpty(nextSquare.row,nextSquare.col-1));
+            //nextSquare.old[2]=1;
             this.image=loadImage('/assets/images/boxman-pushing-left.png');
+            pushSound.play();
             return
         }
     }
@@ -89,6 +105,6 @@ class Player {
     undo(){
         this.row=this.old[0];
         this.col=this.old[1];
-        
+
     }
 }

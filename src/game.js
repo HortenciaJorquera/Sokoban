@@ -143,7 +143,12 @@ class Game {
 
     undo(){
         this.player.undo();
-        
+        // for(let box of this.boxes){
+        //     if(box.old[2]===1){
+        //         box.undo();
+        //         box.old[2]=0;
+        //     }
+        // }
     }
 
     isLevelFinished(){
