@@ -69,7 +69,9 @@ class Game {
         for(let box of this.boxesLocation)
             this.boxes.push(new Box(box[0],box[1]));
 
-    
+        // console.log(this.storageLocations)
+        // console.log(this.boxes)
+
     }
 
     drawGame(){
@@ -147,10 +149,16 @@ class Game {
     isLevelFinished(){
         
         for(let box of this.boxes){
-            //console.log(box.inStorageLocation)
-            if (!box.inStorageLocation) return false
+            if (!box.inStorageLocation) {
+                return false
+            }
         }
         return true
     }
 
+    congratsLevel(){
+
+    }
+
+    congratsFinal(){}
 }

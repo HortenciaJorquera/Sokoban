@@ -40,20 +40,13 @@ class Box {
     }
 
     reviewLocation(){
-        
-        for (let location of game.storageLocations)
-            if(this.row===location[0] && this.col===location[1]){
-                //console.log('the box in '+ location+ ' should turn blue')
-                this.image=loadImage('/assets/images/box-on-storage-location.png')
-                this.inStorageLocation=true;
-                console.log(this.inStorageLocation)
-                }
-            else{
-                this.image=loadImage('/assets/images/box.png');
-                this.inStorageLocation=false;
-                console.log(this.inStorageLocation)
-
-            }
+        if(game.searchForArray(game.storageLocations,[this.row,this.col])!==-1){
+            this.image=loadImage('/assets/images/box-on-storage-location.png')
+            this.inStorageLocation=true;
+        }else{
+            this.image=loadImage('/assets/images/box.png');
+            this.inStorageLocation=false;
+        }
         
     }
 
