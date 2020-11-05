@@ -14,13 +14,13 @@ let playPauseBtn;
 
 
 function preload(){
-    font = loadFont('./assets/fonts/Luckiest_Guy/LuckiestGuy-Regular.ttf');
+    font = loadFont('assets/fonts/Luckiest_Guy/LuckiestGuy-Regular.ttf');
     game.preload();
-    backgroundMusic=loadSound('./assets/music and sounds/Background music.mp4');
-    stepsSound=loadSound('./assets/music and sounds/oneStep.mp4');
-    pushSound=loadSound('./assets/music and sounds/pushBox.mp4');
-    winSound=loadSound('./assets/music and sounds/winingLevel.mp4');
-    onStorageSound=loadSound('./assets/music and sounds/boxInStorage.mp4');
+    backgroundMusic=loadSound('assets/music and sounds/Background music.mp4');
+    stepsSound=loadSound('assets/music and sounds/oneStep.mp4');
+    pushSound=loadSound('assets/music and sounds/pushBox.mp4');
+    winSound=loadSound('assets/music and sounds/winingLevel.mp4');
+    onStorageSound=loadSound('assets/music and sounds/boxInStorage.mp4');
 }
   
 
