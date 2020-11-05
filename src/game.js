@@ -69,9 +69,6 @@ class Game {
         for(let box of this.boxesLocation)
             this.boxes.push(new Box(box[0],box[1]));
 
-        // console.log(this.storageLocations)
-        // console.log(this.boxes)
-
     }
 
     drawGame(){
@@ -161,9 +158,4 @@ class Game {
         return true
     }
 
-    congratsLevel(){
-
-    }
-
-    congratsFinal(){}
 }
