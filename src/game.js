@@ -20,7 +20,7 @@ class Game {
     preload(){
         this.wallImg=loadImage('assets/images/wall.png');
         this.storageLocationImg=loadImage('assets/images/storage-location.png');
-        this.grassImg=loadImage('./assets/images/grass.png');
+        this.grassImg=loadImage('assets/images/grass.png');
         this.floorImg=loadImage('assets/images/floor.png');
     }
 
