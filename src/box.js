@@ -55,7 +55,7 @@ class Box {
             this.image=loadImage('assets/images/box-on-storage-location.png')
             this.inStorageLocation=true;
         }else{
-            this.image=loadImage('assets/images/box.png');
+            this.image=loadImage('./assets/images/box.png');
             this.inStorageLocation=false;
         }
         
