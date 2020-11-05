@@ -4,7 +4,7 @@ class Box {
         this.row=row;
         this.col=col;
         this.inStorageLocation=false;
-        this.image=loadImage('/assets/images/box.png');
+        this.image=loadImage('assets/images/box.png');
         this.old=[row,col,0];
     }
 
@@ -52,10 +52,10 @@ class Box {
 
     reviewLocation(){
         if(game.searchForArray(game.storageLocations,[this.row,this.col])!==-1){
-            this.image=loadImage('/assets/images/box-on-storage-location.png')
+            this.image=loadImage('assets/images/box-on-storage-location.png')
             this.inStorageLocation=true;
         }else{
-            this.image=loadImage('/assets/images/box.png');
+            this.image=loadImage('assets/images/box.png');
             this.inStorageLocation=false;
         }
         

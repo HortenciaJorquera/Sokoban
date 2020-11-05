@@ -7,7 +7,7 @@ class Player {
     }
 
     setup(){
-        this.image=loadImage('/assets/images/boxman-down.png');
+        this.image=loadImage('assets/images/boxman-down.png');
     }
 
     drawPlayer(){
@@ -15,7 +15,7 @@ class Player {
     }
 
     moveUp(nextSquare){
-        this.image=loadImage('/assets/images/boxman-up.png');
+        this.image=loadImage('assets/images/boxman-up.png');
         this.old[1]=this.col;
 
         if(nextSquare==='empty'){
@@ -30,14 +30,14 @@ class Player {
             this.row--;
             nextSquare.moveBoxUp(game.isEmpty(nextSquare.row-1,nextSquare.col));
             //nextSquare.old[2]=1;
-            this.image=loadImage('/assets/images/boxman-pushing-up.png');
+            this.image=loadImage('assets/images/boxman-pushing-up.png');
             pushSound.play();
             return
         }
     }
 
     moveDown(nextSquare){
-        this.image=loadImage('/assets/images/boxman-down.png');
+        this.image=loadImage('assets/images/boxman-down.png');
         this.old[0]=this.row;
 
         if(nextSquare==='empty'){
@@ -52,14 +52,14 @@ class Player {
             this.row++;
             nextSquare.moveBoxDown(game.isEmpty(nextSquare.row+1,nextSquare.col));
             //nextSquare.old[2]=1;
-            this.image=loadImage('/assets/images/boxman-pushing-down1.png');
+            this.image=loadImage('assets/images/boxman-pushing-down1.png');
             pushSound.play();
             return
         }
     }
 
     moveRight(nextSquare){
-        this.image=loadImage('/assets/images/boxman-right.png');
+        this.image=loadImage('assets/images/boxman-right.png');
         this.old[0]=this.row;
 
         if(nextSquare==='empty'){
@@ -74,7 +74,7 @@ class Player {
             this.col++;
             nextSquare.moveBoxRight(game.isEmpty(nextSquare.row,nextSquare.col+1));
             //nextSquare.old[2]=1;
-            this.image=loadImage('/assets/images/boxman-pushing-right.png');
+            this.image=loadImage('assets/images/boxman-pushing-right.png');
             pushSound.play();
             return
         }
@@ -82,7 +82,7 @@ class Player {
 
     moveLeft(nextSquare){
 
-        this.image=loadImage('/assets/images/boxman-left.png');
+        this.image=loadImage('assets/images/boxman-left.png');
         this.old[0]=this.row;
         if(nextSquare==='empty'){
             this.old[1]=this.col;
@@ -96,7 +96,7 @@ class Player {
             this.col--;
             nextSquare.moveBoxLeft(game.isEmpty(nextSquare.row,nextSquare.col-1));
             //nextSquare.old[2]=1;
-            this.image=loadImage('/assets/images/boxman-pushing-left.png');
+            this.image=loadImage('assets/images/boxman-pushing-left.png');
             pushSound.play();
             return
         }

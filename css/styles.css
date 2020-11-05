@@ -31,7 +31,7 @@ body {
   }
 
   #canvas{
-    background-image: url('/assets/images/grass.png');
+    background-image: url('assets/images/grass.png');
     margin:30px;
   }
 
