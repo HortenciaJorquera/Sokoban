@@ -1,4 +1,4 @@
-const game=new Game(3);
+const game=new Game(1);
 let i=1;
 let gameOn=false;
 let initialMenu=true;
@@ -14,13 +14,13 @@ let playPauseBtn;
 
 
 function preload(){
-    font = loadFont('/assets/fonts/Luckiest_Guy/LuckiestGuy-Regular.ttf');
+    font = loadFont('./assets/fonts/Luckiest_Guy/LuckiestGuy-Regular.ttf');
     game.preload();
-    backgroundMusic=loadSound('/assets/music and sounds/Background music.mp4');
-    stepsSound=loadSound('/assets/music and sounds/oneStep.mp4');
-    pushSound=loadSound('/assets/music and sounds/pushBox.mp4');
-    winSound=loadSound('/assets/music and sounds/winingLevel.mp4');
-    onStorageSound=loadSound('/assets/music and sounds/boxInStorage.mp4');
+    backgroundMusic=loadSound('./assets/music and sounds/Background music.mp4');
+    stepsSound=loadSound('./assets/music and sounds/oneStep.mp4');
+    pushSound=loadSound('./assets/music and sounds/pushBox.mp4');
+    winSound=loadSound('./assets/music and sounds/winingLevel.mp4');
+    onStorageSound=loadSound('./assets/music and sounds/boxInStorage.mp4');
 }
   
 
@@ -29,8 +29,8 @@ function setup() {
     let canvas = createCanvas(game.WIDTH, game.HEIGHT);
     canvas.parent("canvas");
 
-    //backgroundMusic.loop();
-    //backgroundMusic.setVolume(0.2);
+    backgroundMusic.loop();
+    backgroundMusic.setVolume(0.2);
   
   }
 
@@ -63,7 +63,7 @@ function draw(){
 
 function keyPressed() {
     if (keyCode === 82) game.restartGame();//r
-    if (keyCode === 90) game.undo();//z
+    if (keyCode === 90) togglePlaying();//game.undo();//z
     if (keyCode===13) {//enter
         //if(lastLevel) {game.level=1;}
         console.log('enter');
@@ -86,8 +86,8 @@ function keyPressed() {
     if (keyCode === 38) game.player.moveUp(game.nextSquare(game.player.row-1,game.player.col));
     if (keyCode === 40) game.player.moveDown(game.nextSquare(game.player.row+1,game.player.col));
    
-    console.log(game.isLevelFinished(),keyCode)
     if(game.isLevelFinished() && keyCode!==13){
+
         winSound.play();
         
         if(game.level<finalLevel){
@@ -116,7 +116,6 @@ function drawPopUp(message){
     fill('rgba(134, 0, 179,0.8)');
     stroke('rgba(134, 0, 179,0.8)');
     rect((game.WIDTH-menuWidth)/2, (game.HEIGHT-menuHeight)/2, menuWidth, menuHeight, 20)
-    //rect(0, 0, game.HEIGHT, game.WIDTH, 20)
     
     fill('black');
     textFont(font);
@@ -129,7 +128,7 @@ function drawPopUp(message){
 function togglePlaying(){
     if(!backgroundMusic.isPlaying()){
         backgroundMusic.play();
-        backgroundMusic.setVolume(0.3);
+        backgroundMusic.setVolume(0.1);
         //playPauseBtn.html('Pause Music')
     }else{
         backgroundMusic.pause();
