@@ -29,11 +29,6 @@ function setup() {
     let canvas = createCanvas(game.WIDTH, game.HEIGHT);
     canvas.parent("canvas");
 
-    // backgroundMusic.setVolume(0.1);
-    // backgroundMusic.loop();
-    togglePlaying();
-
-
   }
 
 
@@ -66,6 +61,7 @@ function keyPressed() {
     if (keyCode === 82) game.restartGame();//r
     if (keyCode === 90) togglePlaying();//z
     if (keyCode===13) {//enter
+        togglePlaying();
         console.log('enter');
         nextLevelMenu=false;
         lastLevel=false;
@@ -88,10 +84,8 @@ function keyPressed() {
    
     if(game.isLevelFinished() && keyCode!==13){
 
-        //backgroundMusic.pause();
         winSound.setVolume(0.2);
         winSound.play();
-        //togglePlaying();
         
         if(game.level<finalLevel){
             nextLevelMenu=true;
@@ -99,14 +93,12 @@ function keyPressed() {
             lastLevel=false;
             gameOn=false;
             game.level++;
-            //backgroundMusic.stop();
             togglePlaying();
             setup();
             
         }else {
             game.level=1;
             togglePlaying();
-            //backgroundMusic.stop();
             setup();
             lastLevel=true;
             gameOn=false;
