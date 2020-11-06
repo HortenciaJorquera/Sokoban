@@ -59,6 +59,16 @@ class Game {
                 this.floor=floor3;
                 this.playerPosition=player3;
                 break;
+            case 4:
+                this.HEIGHT=HEIGHT4;
+                this.WIDTH=WIDTH4;
+                this.walls=walls4;
+                this.storageLocations=storageLocations4;
+                this.boxesLocation=boxesLocations4;
+                this.grass=grass4;
+                this.floor=floor4;
+                this.playerPosition=player4;
+                break;
         }
 
         //create and position the player
