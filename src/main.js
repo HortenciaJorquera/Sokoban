@@ -1,9 +1,9 @@
 const game=new Game(1);
-let i=1;
 let gameOn=false;
 let initialMenu=true;
 let nextLevelMenu=false;
 let lastLevel=false;
+let play=true;
 let font;
 let backgroundMusic;
 let stepsSound;
@@ -29,9 +29,11 @@ function setup() {
     let canvas = createCanvas(game.WIDTH, game.HEIGHT);
     canvas.parent("canvas");
 
-    backgroundMusic.loop();
-    backgroundMusic.setVolume(0.2);
-  
+    // backgroundMusic.setVolume(0.1);
+    // backgroundMusic.loop();
+    togglePlaying();
+
+
   }
 
 
@@ -43,7 +45,6 @@ function draw(){
     }
     
     if(gameOn){
-        //console.log('hi')
         clear();
         game.drawGame();
     }
@@ -63,9 +64,8 @@ function draw(){
 
 function keyPressed() {
     if (keyCode === 82) game.restartGame();//r
-    if (keyCode === 90) togglePlaying();//game.undo();//z
+    if (keyCode === 90) togglePlaying();//z
     if (keyCode===13) {//enter
-        //if(lastLevel) {game.level=1;}
         console.log('enter');
         nextLevelMenu=false;
         lastLevel=false;
@@ -88,7 +88,10 @@ function keyPressed() {
    
     if(game.isLevelFinished() && keyCode!==13){
 
+        //backgroundMusic.pause();
+        winSound.setVolume(0.2);
         winSound.play();
+        //togglePlaying();
         
         if(game.level<finalLevel){
             nextLevelMenu=true;
@@ -96,11 +99,14 @@ function keyPressed() {
             lastLevel=false;
             gameOn=false;
             game.level++;
+            //backgroundMusic.stop();
+            togglePlaying();
             setup();
-            console.log('hi')
             
         }else {
             game.level=1;
+            togglePlaying();
+            //backgroundMusic.stop();
             setup();
             lastLevel=true;
             gameOn=false;
@@ -112,7 +118,7 @@ function keyPressed() {
   }
 
 function drawPopUp(message){
-    //console.log('hi')
+  
     fill('rgba(134, 0, 179,0.8)');
     stroke('rgba(134, 0, 179,0.8)');
     rect((game.WIDTH-menuWidth)/2, (game.HEIGHT-menuHeight)/2, menuWidth, menuHeight, 20)
@@ -127,8 +133,8 @@ function drawPopUp(message){
 
 function togglePlaying(){
     if(!backgroundMusic.isPlaying()){
-        backgroundMusic.play();
         backgroundMusic.setVolume(0.1);
+        backgroundMusic.loop();
         //playPauseBtn.html('Pause Music')
     }else{
         backgroundMusic.pause();

@@ -26,6 +26,7 @@ class Game {
 
     setup(){
         
+        //togglePlaying();
         //assign the properties of the gameboard and player
         switch(this.level){
             case 1:

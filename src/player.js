@@ -22,6 +22,7 @@ class Player {
             this.old[0]=this.row;
             this.row--;
             //nextSquare.old[2]=1;
+            stepsSound.setVolume(0.1);
             stepsSound.play();
             return
         }
@@ -31,6 +32,7 @@ class Player {
             nextSquare.moveBoxUp(game.isEmpty(nextSquare.row-1,nextSquare.col));
             //nextSquare.old[2]=1;
             this.image=loadImage('assets/images/boxman-pushing-up.png');
+            pushSound.setVolume(0.1);
             pushSound.play();
             return
         }
@@ -44,6 +46,7 @@ class Player {
             this.old[1]=this.col;
             this.row++;
             //nextSquare.old[2]=1;
+            stepsSound.setVolume(0.1);
             stepsSound.play();
             return
         }
@@ -53,6 +56,7 @@ class Player {
             nextSquare.moveBoxDown(game.isEmpty(nextSquare.row+1,nextSquare.col));
             //nextSquare.old[2]=1;
             this.image=loadImage('assets/images/boxman-pushing-down1.png');
+            pushSound.setVolume(0.1);
             pushSound.play();
             return
         }
@@ -66,6 +70,7 @@ class Player {
             this.old[1]=this.col;
             this.col++;
             //nextSquare.old[2]=1;
+            stepsSound.setVolume(0.1);
             stepsSound.play();
             return
         }
@@ -75,6 +80,7 @@ class Player {
             nextSquare.moveBoxRight(game.isEmpty(nextSquare.row,nextSquare.col+1));
             //nextSquare.old[2]=1;
             this.image=loadImage('assets/images/boxman-pushing-right.png');
+            pushSound.setVolume(0.1);
             pushSound.play();
             return
         }
@@ -88,6 +94,7 @@ class Player {
             this.old[1]=this.col;
             this.col--;
             //nextSquare.old[2]=1;
+            stepsSound.setVolume(0.1);
             stepsSound.play();
             return
         }
@@ -97,6 +104,7 @@ class Player {
             nextSquare.moveBoxLeft(game.isEmpty(nextSquare.row,nextSquare.col-1));
             //nextSquare.old[2]=1;
             this.image=loadImage('assets/images/boxman-pushing-left.png');
+            pushSound.setVolume(0.1);
             pushSound.play();
             return
         }
