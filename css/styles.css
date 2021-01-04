@@ -1,92 +1,85 @@
-@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
 
 body {
-    font-family: "Luckiest Guy", sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-image: url('../assets/images/grass.png');
+  font-family: "Luckiest Guy", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("../assets/images/grass.png");
+}
 
-  }
-  
-  h1 {
-    font-weight: 100;
-    color: wheat;
-    font-size: 70px;
-    text-shadow: 5px 5px 5px rgb(24, 24, 24);
-    margin:5px
-    
-  }
+h1 {
+  font-weight: 100;
+  color: wheat;
+  font-size: 70px;
+  text-shadow: 5px 5px 5px rgb(24, 24, 24);
+  margin: 5px;
+}
 
+#title {
+  background-color: rgb(0, 47, 255);
+  border-radius: 100px;
+  box-shadow: 5px 5px 5px rgb(24, 24, 24);
+  width: 23rem;
+  padding: 8px;
+  margin: 40px;
+  display: flex;
+  justify-content: center;
+}
 
-  #title{
-    background-color: rgb(0, 47, 255);
-    border-radius: 100px;
-    box-shadow: 5px 5px 5px rgb(24, 24, 24);
-    width: 23rem;
-    padding:8px;
-    margin:40px;
-    display: flex;
-    justify-content: center;
-  }
+#canvas {
+  background-image: url("../assets/images/grass.png");
+  margin: 30px;
+}
 
-  #canvas{
-    background-image: url('../assets/images/grass.png');
-    margin:30px;
-  }
+#container {
+  color: wheat;
+  text-shadow: 5px 5px 5px rgb(24, 24, 24);
+  background-color: rgb(0, 47, 255);
+  border-radius: 100px;
+  box-shadow: 5px 5px 5px rgb(24, 24, 24);
+  width: 50rem;
+  padding: 8px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  #container{
-    color: wheat;
-    text-shadow: 5px 5px 5px rgb(24, 24, 24);
-    background-color: rgb(0, 47, 255);
-    border-radius: 100px;
-    box-shadow: 5px 5px 5px rgb(24, 24, 24);
-    width: 50rem;
-    padding:8px;
-    margin:20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+h2 {
+  font-size: 2rem;
+}
 
-  h2{
-    font-size: 2rem;
-  }
+#instructions {
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+}
 
-  #instructions{
-    font-size: 1.5rem;
-    display: flex;
-    justify-content: space-between;
-  }
+.instr {
+  margin: 0 25px;
+  display: flex;
+  width: 6rem;
+  flex-direction: column;
+  align-items: center;
+}
+.btnImg {
+  background-color: white;
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+.instr img {
+  width: 5rem;
+  height: auto;
+  border-radius: 10px;
+  background-color: white;
+}
 
-  .instr{
-    margin:0 25px;
-    display: flex;
-    width: 6rem;
-    flex-direction: column;
-    align-items: center;
-  }
-  .btnImg{
-    background-color:white;
-    width: 5rem;
-    height: 5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-
-  }
-  .instr img {
-    width: 5rem;
-    height: auto;
-    border-radius: 10px;
-    background-color:white;
-
-  }
-
-  #esc{
-    width: 4rem;
-    height: auto;
-  }
-
-  
+#esc {
+  width: 4rem;
+  height: auto;
+}
